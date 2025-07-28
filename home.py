@@ -1,6 +1,6 @@
-import streamlit as st  # ✅ แก้ตรงนี้
+import streamlit as st
 from profile import profile_page
-from delete_account import delete_account_page  # ถ้ามีหน้าลบบัญชี
+from delete_account import delete_account_page 
 
 def rerun():
     if hasattr(st, "experimental_rerun"):
@@ -10,7 +10,7 @@ def home_page():
     st.sidebar.title("📚 เมนูหลัก")
 
     user_email = st.session_state.get("user", {}).get("email", "")
-    st.sidebar.markdown(f"👋 ยินดีต้อนรับ: `{user_email}`")
+    st.sidebar.markdown(f"👋 ยินดีต้อนรับ : `{user_email}`")
 
     menu = st.sidebar.radio("เลือกเมนู", [
         "🏠 หน้าหลัก",
