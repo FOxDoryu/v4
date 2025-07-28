@@ -6,11 +6,11 @@ OTP_STORE = {}
 
 def send_otp_email(receiver_email, receiver_name=None):
     otp = str(random.randint(100000, 999999))
-    sender_email = "guzz9777@gmail.com"  # เปลี่ยนเป็นอีเมลจริงของคุณ
-    sender_password = "bnnq qnlk jbwt rgil"  # รหัสผ่านแอป Gmail (App Password)
+    sender_email = "guzz9777@gmail.com"
+    sender_password = "bnnq qnlk jbwt rgil"
 
     subject = "ยืนยัน OTP"
-    # ถ้ามีชื่อ ใช้ชื่อในเนื้อหาอีเมลด้วย
+    
     if receiver_name:
         message_text = f"สวัสดี {receiver_name},\n\nรหัส OTP ของคุณคือ: {otp} (หมดอายุใน 5 นาที)"
     else:
@@ -24,7 +24,6 @@ def send_otp_email(receiver_email, receiver_name=None):
             server.login(sender_email, sender_password)
             server.sendmail(sender_email, receiver_email, message.encode('utf-8'))
 
-        # เก็บ OTP, เวลาส่ง และชื่อถ้ามี
         OTP_STORE[receiver_email] = {"otp": otp, "timestamp": time.time(), "name": receiver_name}
         return True
     except Exception as e:
