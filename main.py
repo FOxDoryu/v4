@@ -19,7 +19,7 @@ def set_page(new_page):
 
 def sidebar_menu():
     if st.session_state.page in ["login", "signup"]:
-        st.sidebar.title("------Menu------")
+        st.sidebar.title("- - - - - - Menu - - - - - -")
         if st.sidebar.button("🔐 เข้าสู่ระบบ", key="sidebar_login"):
             st.session_state.page = "login"
         if st.sidebar.button("📝 สมัครสมาชิก", key="sidebar_signup"):
