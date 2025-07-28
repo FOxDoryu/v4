@@ -40,5 +40,4 @@ def safe_rerun():
     if hasattr(st, "experimental_rerun"):
         st.experimental_rerun()
     else:
-        # กำหนด flag ให้เปลี่ยนหน้า (Streamlit จะ rerun เอง)
         st.session_state["page_rerun"] = True
