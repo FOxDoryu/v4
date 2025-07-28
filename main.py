@@ -8,7 +8,6 @@ from delete_account import delete_account_page
 
 st.set_page_config(page_title="ระบบเข้าสู่ระบบ", layout="centered")
 
-# ค่าเริ่มต้นของ session_state
 if "page" not in st.session_state:
     st.session_state.page = "login"
 if "logged_in" not in st.session_state:
@@ -27,10 +26,8 @@ def sidebar_menu():
         if st.sidebar.button("🔑 ลืมรหัสผ่าน", key="sidebar_forgot"):
             st.session_state.page = "password_reset"
 
-# เรียกเมนูด้านข้าง
 sidebar_menu()
 
-# Routing หน้า
 if st.session_state.page == "login":
     login_page()
 elif st.session_state.page == "signup":
