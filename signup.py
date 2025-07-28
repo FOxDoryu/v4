@@ -48,13 +48,11 @@ def signup_page():
                         save_all_users(users)
                         st.success("✅ สมัครสมาชิกเรียบร้อยแล้ว!")
 
-                        # ล้างข้อมูลหลังสมัคร
                         st.session_state.pop("signup_otp_sent", None)
                         st.session_state.pop("signup_name", None)
                         st.session_state.pop("signup_email", None)
 
-                        st.session_state.page = "login"  # กลับไปหน้า login
+                        st.session_state.page = "login"  
 
-    # ปุ่มย้อนกลับ
     if st.button("🔙 ย้อนกลับ"):
         st.session_state.page = "login"
